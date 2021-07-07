@@ -5,11 +5,10 @@
 |   +--● migrations (includes files related to migrations)
 |   |  
 |   +--● templates
-|   |   |--create_view.html
-|   |   |--list_view.html
-|   |   |--detail_view.html
-|   |   |--update_view.html
-|   |   |--delete_view.html
+|   |   |--● employee_register
+|   |  |  |--base.html
+|   |  |  |--employee_form.html
+|   |  |  |--employee_list.html
 |   | 
 |   |-- models.py
 |   |-- forms.py
