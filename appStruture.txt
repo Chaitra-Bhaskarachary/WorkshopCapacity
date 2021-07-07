@@ -1,0 +1,22 @@
+● workshop_capacity
+|
++---● capacity (app folder)
+|   |
+|   +--● migrations (includes files related to migrations)
+|   |  
+|   +--● templates
+|   |   |--create_view.html
+|   |   |--list_view.html
+|   |   |--detail_view.html
+|   |   |--update_view.html
+|   |   |--delete_view.html
+|   | 
+|   |-- models.py
+|   |-- forms.py
+|   |-- urls.py
+|   |-- views.py
+|
++---● workshop_capacity (project folder)
+|   |
+|   |--settings.py 
+|   |--urls.py
