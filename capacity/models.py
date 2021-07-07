@@ -27,17 +27,17 @@ class WorkshopCapacity(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(53)]
     )
     entry_check = models.IntegerField(
-        blank=False,
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)]    
     )
     exit_check = models.IntegerField(
-        blank=False,
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)]
     )
     retail_ready = models.IntegerField(
-        blank=False,
+        blank=True,
         null=True,
         validators=[MinValueValidator(0)]
     )

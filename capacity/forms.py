@@ -19,3 +19,11 @@ class WorkshopCapacityForm(forms.ModelForm):
             "exit_check",
             "retail_ready"
         ]
+        labels = {
+            'admin_id':'Admin ID',
+            'admin_name':'Admin Name',
+            'calender_week':'Calender Week',
+            'entry_check':'Entry Check',
+            'exit_check':'Exit Check',
+            'retail_ready':'Retail Ready'
+        }
