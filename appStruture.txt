@@ -5,11 +5,10 @@
 |   +--● migrations (includes files related to migrations)
 |   |  
 |   +--● templates
-|   |   |--create_view.html
-|   |   |--list_view.html
-|   |   |--detail_view.html
-|   |   |--update_view.html
-|   |   |--delete_view.html
+|   |   |--● capacity
+|   |  |  |--base.html
+|   |  |  |--entry_form.html
+|   |  |  |--entry_list.html
 |   | 
 |   |-- models.py
 |   |-- forms.py
