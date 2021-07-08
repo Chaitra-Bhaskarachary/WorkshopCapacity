@@ -12,7 +12,6 @@
 |   | 
 |   |-- models.py
 |   |-- forms.py
-|   |-- urls.py
 |   |-- views.py
 |
 +---● workshop_capacity (project folder)
