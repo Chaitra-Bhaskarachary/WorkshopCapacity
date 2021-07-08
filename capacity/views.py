@@ -1,23 +1,31 @@
 from django.shortcuts import render, redirect
 from .forms import WorkshopCapacityForm
-
-# Create your views here.
-# relative import of forms
 from .models import WorkshopCapacity
-from .forms import WorkshopCapacityForm
+
 
 def entry_list(request):
-    return render(request,"capacity/entry_list.html")
+    context ={'entry_list': WorkshopCapacity.objects.all()}
+    return render(request,"capacity/entry_list.html", context)
 
-def entry_form(request):
+def entry_form(request, id=0):
     if request.method=="GET":
-        form = WorkshopCapacityForm()
+        if id==0:
+            form = WorkshopCapacityForm()
+        else:
+            entry = WorkshopCapacity.objects.get(pk=id)
+            form = WorkshopCapacityForm(instance=entry)
         return render(request,"capacity/entry_form.html", {'form':form})
     else:
-        form = WorkshopCapacityForm(request.POST)
+        if id == 0:
+            form = WorkshopCapacityForm(request.POST)
+        else:
+            entry = WorkshopCapacity.objects.get(pk=id)
+            form = WorkshopCapacityForm(request.POST, instance=entry)
         if form.is_valid():
             form.save()
-        return redirect('entry/list')
+        return redirect('/entry/list')
 
-def entry_delete(request):
-    return
+def entry_delete(request, id):
+    entry = WorkshopCapacity.objects.get(pk=id)
+    entry.delete()
+    return redirect('/entry/list')
