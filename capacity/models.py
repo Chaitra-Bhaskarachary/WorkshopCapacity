@@ -1,13 +1,13 @@
 # Create your models here.
 import datetime
-
 from django.db import models
+from django.core.validators import (MinValueValidator, MaxValueValidator, FileExtensionValidator)
 
-from django.core.validators import (
-    MinValueValidator, MaxValueValidator, FileExtensionValidator
-)
+def current_year():
+    return datetime.date.today().year
 
-
+def max_value_current_year(value):
+    return MaxValueValidator(current_year())(value)    
 
 class WorkshopCapacity(models.Model):
 
@@ -25,6 +25,11 @@ class WorkshopCapacity(models.Model):
         blank=False,
         null=False,
         validators=[MinValueValidator(1), MaxValueValidator(53)]
+    )
+    year = models.IntegerField(
+        blank=False,
+        null=False,
+        validators=[MinValueValidator(2000), max_value_current_year]
     )
     entry_check = models.IntegerField(
         blank=True,

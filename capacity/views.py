@@ -21,7 +21,7 @@ def entry_form(request, id=0):
         else:
             entry = WorkshopCapacity.objects.get(pk=id)
             form = WorkshopCapacityForm(request.POST, instance=entry)
-        if form.is_valid():
+        if  form.is_valid():
             form.save()
         return redirect('/entry/list')
 
